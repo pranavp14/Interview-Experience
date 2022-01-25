@@ -21,4 +21,8 @@ db.connect( (error)=>{
     }
 })
 
+module.exports = db;
+
+
+
 

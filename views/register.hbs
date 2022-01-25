@@ -50,7 +50,7 @@
       </div>
         <div class="signup-form">
           <div class="title" >Signup</div>
-        <form action="auth/register" method="post">
+        <form action="/auth/register" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
@@ -62,7 +62,7 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-calendar-week"></i>
-                <input type= "month" placeholder="Enter your passing year" required name="passingYear">
+                <input type= "month" placeholder="Enter your passing year" required name="passingyr">
               </div>
               <div class="input-box">
                 <i class="fas fa-code-branch"></i>
@@ -82,6 +82,9 @@
     </div>
     </div>
   </div>
+   {{#if message}}
+      <h4 class="alert alert-danger mt-4">{{message}}</h4>
+  {{/if}}
 </body>
 <script>
     function signup(){
