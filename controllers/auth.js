@@ -7,32 +7,14 @@ const jws = require('jsonwebtoken');
 dotenv.config({ path: '../env'});
 
 
-
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
-});
-
-db.connect( (error)=>{
-    if(error){
-        console.log(error)
-    }
-    else{
-        console.log('server connected...')
-    }
-})
-
-
 exports.register = (req,res)=>{
-    
+
     var conDB = db;
     console.log(req.body);
 
     const{ name, email, passingyr, branch, password } = req.body;
 
-    conDB.query('SELECT email FROM users WHERE email = ?'[email], async(err,result)=>{
+    conDB.query('SELECT * FROM `users` WHERE email = ?'[email], async(err,result)=>{
         if(err){
             console.log("error occur");
             console.log(err);
