@@ -47,4 +47,24 @@ router.post('/register',(req,res)=>{
     })
 })
 
+router.post('/login', function(req, res){
+    var email = req.body.email;
+    var password = req.body.password;
+    var sql='SELECT * FROM users WHERE email =? AND password =?';
+    db.query(sql, [email, password], function (err, data, fields) {
+        if(err) throw err
+        if(data.length>0){
+            // req.body.loggedinUser= true;
+            req.body.email = email;
+            console.log("login Successfully!")
+            res.render('register');
+        }else{
+            alert ("Your Email Address or password is wrong")  
+            res.render('register',{alertMsg:"Your Email Address or password is wrong"});
+
+        }
+    })
+})
+       
+
 module.exports = router;
