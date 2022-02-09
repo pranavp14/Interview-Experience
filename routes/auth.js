@@ -61,7 +61,6 @@ router.post('/login', function(req, res){
         }else{
             alert ("Your Email Address or password is wrong")  
             res.render('register',{alertMsg:"Your Email Address or password is wrong"});
-
         }
     })
 })
