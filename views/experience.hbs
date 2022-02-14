@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expeience</title>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/experience.css">
+
+</head>
+<body>
+   <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form action="/experince" method="post" id="signup-form" class="signup-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">Student name</label>
+                                <input type="text" class="form-input" name="first_name" id="first_name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Company name</label>
+                                <input type="text" class="form-input" name="last_name" id="last_name" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                    
+                            <div class="form-radio">
+                                <label for="mode">Mode</label>
+                                <div class="form-flex">
+                                    <input type="radio" name="mode" value="online" id="online" checked="checked" />
+                                    <label for="online">ONLINE</label>
+    
+                                    <input type="radio" name="mode" value="offline" id="offline" />
+                                    <label for="offline">OFFLINE</label>
+                                </div>
+                            </div>
+                          <div class="form-radio">
+                                <label for="Campus">Campus</label>
+                                <div class="form-flex">
+                                    <input type="radio" name="campus" value="oncampus" id="oncampus" checked="checked" />
+                                    <label for="oncampus">ON</label>
+    
+                                    <input type="radio" name="campus" value="offcampus" id="offcampus" />
+                                    <label for="offcampus">OFF</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="job_role">JOB ROLE</label>
+                                <input type="text" class="form-input" name="jobRole" id="first_name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Package(CTC)</label>
+                                <input type="text" class="form-input" name="package" id="last_name" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-icon">
+                                <label for="birth_date">Place date</label>
+                                <input type="text" class="form-input" name="birth_date" id="birth_date" placeholder="MM-DD-YYYY" />
+                            </div>
+                          <div class="form-radio">
+                                <label for="intershipOffer">INTERSHIP OFFER</label>
+                                <div class="form-flex">
+                                    <input type="radio" name="intershipOffer" value="yes" id="yes" checked="checked" />
+                                    <label for="yes">YES</label>
+                                    <input type="radio" name="intershipOffer" value="no" id="no" />
+                                    <label for="no">NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="re_password">Email</label>
+                                <input type="password" class="form-input" name="re_password" id="re_password"/>
+                            </div>
+                        </div>
+                        <div class="form-text">
+                            <a href="#" class="add-info-link"><i class="zmdi zmdi-chevron-right"></i>Additional info</a>
+                            <div class="add_info">
+                                <div class="form-group">
+                                    <label for="email">email</label>
+                                    <input type="email" class="form-input" name="email" id="email"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Round Type</label>
+                                    <div class="select-list">
+                                        <select name="country" id="country" required>
+                                            <option value="US">Apti</option>
+                                            <option value="UK">Technical </option>
+                                            <option value="VN">Managerial</option>
+                                            <option value="VN">HR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Expeience">Expeience</label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="textAreaExample">Message/TIP</label>
+                                <textarea class="form-control" id="textAreaExample1" rows="4" cols="20"></textarea>
+                              </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="textAreaExample">Resorces to follow</label>
+                                <textarea class="form-control" id="textAreaExample1" rows="4" cols="20"></textarea>
+                           </div>
+                       </div>
+                       <div class="form-row">
+                        <div class="form-radio">
+                            <label for="level">Interview level</label>
+                            <div class="form-flex">
+                                <input type="radio" name="level" value="easy" id="easy"  />
+                                <label for="easy">EASY</label>
+                                <input type="radio" name="level" value="medium" id="medium" checked="checked"/>
+                                <label for="medium">MEDIUM</label>
+                                <input type="radio" name="level" value="hard" id="hard" />
+                                <label for="hard">DIFFICULT</label>
+                            </div>
+                        </div>
+                       </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

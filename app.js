@@ -25,6 +25,9 @@ app.set('view engine','hbs');
 
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
+app.use('/experience',(req,res)=>{
+    res.render('experience');
+})
 
 app.listen(port, ()=>{
     console.log("server is running");
