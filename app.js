@@ -35,12 +35,15 @@ app.set('view engine','hbs');
 
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
-app.use('/experience',(req,res)=>{
-    res.render('experience');
-})
-app.use('/',(req,res)=>{
-    res.render('index');
-})
+app.use('/add',require('./routes/add'));
+
+
+// app.use('/experience',(req,res)=>{
+//     res.render('experience');
+// })
+// app.use('/',(req,res)=>{
+//     res.render('index');
+// })
 
 app.listen(port, ()=>{
     console.log("server is running");

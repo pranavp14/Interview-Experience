@@ -9,25 +9,27 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="/experience.css">
-
+    
 </head>
 
 <body>
     <div class="main">
+    {{!-- {{>navbar}} --}}
+
 
         <section class="signup">
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <form action="/experince" method="post" id="signup-form" class="signup-form">
+                    <form action="/add/experience" method="post" id="signup-form" class="signup-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="first_name">Student name</label>
-                                <input type="text" class="form-input" name="first_name" id="first_name" />
+                                <label for="StudentName">Student name</label>
+                                <input type="text" class="form-input" name="StudentName" id="StudentName" />
                             </div>
                             <div class="form-group">
-                                <label for="last_name">Company name</label>
-                                <input type="text" class="form-input" name="last_name" id="last_name" />
+                                <label for="CompanyName">Company name</label>
+                                <input type="text" class="form-input" name="CompanyName" id="CompanyName" />
                             </div>
                         </div>
                         <div class="form-row">
@@ -43,7 +45,7 @@
                                 </div>
                             </div>
                             <div class="form-radio">
-                                <label for="Campus">Campus</label>
+                                <label for="campus">Campus</label>
                                 <div class="form-flex">
                                     <input type="radio" name="campus" value="oncampus" id="oncampus"
                                         checked="checked" />
@@ -56,18 +58,18 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="job_role">JOB ROLE</label>
-                                <input type="text" class="form-input" name="jobRole" id="first_name" />
+                                <label for="jobRole">JOB ROLE</label>
+                                <input type="text" class="form-input" name="jobRole" id="jobRole" />
                             </div>
                             <div class="form-group">
                                 <label for="package">Package(CTC)</label>
-                                <input type="text" class="form-input" name="package" id="last_name" />
+                                <input type="text" class="form-input" name="package" id="package" />
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group form-icon">
-                                <label for="birth_date">Place date</label>
-                                <input type="text" class="form-input" name="birth_date" id="birth_date"
+                                <label for="placeDate">Place date</label>
+                                <input type="text" class="form-input" name="placeDate" id="placeDate"
                                     placeholder="MM-DD-YYYY" />
                             </div>
                             <div class="form-radio">
@@ -82,59 +84,83 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="re_password">Email</label>
-                                <input type="password" class="form-input" name="re_password" id="re_password" />
+                                <label for="email">Email</label>
+                                <input type="text" class="form-input" name="email" id="email" />
                             </div>
                         </div>
-                        <div class="form-text">
-                            <a href="#" class="add-info-link"><i class="zmdi zmdi-chevron-right"></i>Additional info</a>
-                            <div class="add_info">
+                       
+                        <div class="form-row">
                                 <div class="form-group">
-                                    <label for="email">email</label>
-                                    <input type="email" class="form-input" name="email" id="email" />
-                                </div>
+                                        <label>Round 1</label>
+                                        <input type="text" class="form-input" name="round1" />
+                                 </div>
+                         </div>
+                        <div class="form-row">
+                                 <div class="form-group">
+                                      <label for="experience1">Experience</label>
+                                        <textarea class="form-control" id="textAreaExample1" rows="9" cols="65" name="experience1"></textarea>
+                                 </div>
+                         </div>
+                           <div class="form-row">
                                 <div class="form-group">
-                                    <label for="country">Round Type</label>
-                                    <div class="select-list">
-                                        <select name="country" id="country" required>
-                                            <option value="US">Apti</option>
-                                            <option value="UK">Technical </option>
-                                            <option value="VN">Managerial</option>
-                                            <option value="VN">HR</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                              
-
+                                        <label>Round 2</label>
+                                        <input type="text" class="form-input" name="round2" />
+                                 </div>
+                         </div>
+                        <div class="form-row">
+                                 <div class="form-group">
+                                      <label for="experience2">Experience</label>
+                                        <textarea class="form-control" id="textAreaExample1" rows="9" cols="65" name="experience2"></textarea>
+                                 </div>
+                         </div>
+                           <div class="form-row">
                                 <div class="form-group">
-                                    <label for="Expeience">Expeience</label>
+                                        <label>Round 3</label>
+                                        <input type="text" class="form-input" name="round3" />
+                                 </div>
+                         </div>
+                        <div class="form-row">
+                                 <div class="form-group">
+                                      <label for="experience3">Experience</label>
+                                        <textarea class="form-control" id="textAreaExample1" rows="9" cols="65" name="experience3"></textarea>
+                                 </div>
+                         </div>
+                           <div class="form-row">
+                                <div class="form-group">
+                                        <label>Round 4</label>
+                                        <input type="text" class="form-input" name="round4" />
+                                 </div>
+                         </div>
+                        <div class="form-row">
+                                 <div class="form-group">
+                                      <label for="experience4">Experience</label>
+                                        <textarea class="form-control" id="textAreaExample1" rows="9" cols="65" name="experience4"></textarea>
+                                 </div>
+                         </div>
+                          <div class="form-row">
+                                <div class="form-group">
+                                        <label>Round 5</label>
+                                        <input type="text" class="form-input" name="round5" />
+                                 </div>
+                         </div>
+                        <div class="form-row">
+                                 <div class="form-group">
+                                      <label for="experience5">Experience</label>
+                                        <textarea class="form-control" id="textAreaExample1" rows="9" cols="65" name="experience5"></textarea>
+                                 </div>
+                         </div>
+                         
 
-                                </div>
-                            </div>
-                              <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="job_role">Round 1</label>
-                                        <input type="text" class="form-input" name="jobRole" id="first_name" />
-                                    </div>
-                                </div>
-                              <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="package">Experience</label>
-                                        <textarea class="form-control" id="textAreaExample1" rows="4" cols="20"></textarea>
-                                    </div>
-                                </div>
-                        </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label" for="textAreaExample">Message/TIP</label>
-                                <textarea class="form-control" id="textAreaExample1" rows="4" cols="20"></textarea>
+                                <textarea class="form-control" id="textAreaExample1" rows="5" cols="65" name="message"></textarea>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label class="form-label" for="textAreaExample">Resorces to follow</label>
-                                <textarea class="form-control" id="textAreaExample1" rows="4" cols="20"></textarea>
+                                <label class="form-label" for="textAreaExample">Resources to follow</label>
+                            <textarea class="form-control" id="textAreaExample1" rows="5" cols="65" name="source"></textarea>
                             </div>
                         </div>
                         <div class="form-row">
@@ -151,7 +177,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Submit" />
+                            <input type="submit" id="submit" class="form-submit" value="Submit" />
                         </div>
                     </form>
                 </div>
@@ -161,7 +187,7 @@
     </div>
 
     <!-- JS -->
-    <script src="js/main.js"></script>
+    {{!-- <script src="js/main.js"></script> --}}
 
 </body>
 

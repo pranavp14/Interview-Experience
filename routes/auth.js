@@ -38,7 +38,7 @@ router.post('/register',(req,res)=>{
                         console.log(err);
                     }else{
                         console.log(result);
-                        req.flash('success', 'You have successfully signup!');
+                        // req.flash('success', 'You have successfully signup!');
                         return res.render('register')
                     }
             })
@@ -57,7 +57,7 @@ router.post('/login', function(req, res){
             // req.body.loggedinUser= true;
             req.body.email = email;
             console.log("login Successfully!")
-            res.render('register');
+            res.render('experience');
         }else{
             alert ("Your Email Address or password is wrong")  
             res.render('register',{alertMsg:"Your Email Address or password is wrong"});

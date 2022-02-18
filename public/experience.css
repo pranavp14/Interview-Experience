@@ -15,44 +15,44 @@ display-flex, .form-flex, .form-row, .add-info-link {
     font-style: normal;
     font-weight: 300;
     src: url("../fonts/montserrat/Montserrat-Light.ttf"); */
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
   /* @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     src: url("../fonts/montserrat/Montserrat-Regular.ttf"); */
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
   /* @font-face {
     font-family: 'Montserrat';
     font-style: italic;
     font-weight: 400;
     src: url("../fonts/montserrat/Montserrat-Italic.ttf"); */
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
   /* @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     src: url("../fonts/montserrat/Montserrat-Medium.ttf"); */
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
   /* @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     src: url("../fonts/montserrat/Montserrat-SemiBold.ttf"); */
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
   /* @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     src: url("../fonts/montserrat/Montserrat-Bold.ttf"); */
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
   /* @font-face {
     font-family: 'Montserrat';
     font-style: italic;
     font-weight: 700;
     src: url("../fonts/montserrat/Montserrat-BoldItalic.ttf"); */
     
-    /* IE9 Compat Modes */ }
+    /* IE9 Compat Modes */ 
 
   /* @font-face {
     font-family: 'Montserrat';
@@ -126,6 +126,7 @@ display-flex, .form-flex, .form-row, .add-info-link {
     margin: 0; } */
   
   p {
+    
     margin-bottom: 0px;
     font-size: 15px;
     color: #777; }
@@ -151,7 +152,7 @@ display-flex, .form-flex, .form-row, .add-info-link {
     color: #222;
     font-weight: 600;
     font-family: 'Montserrat';
-    background: #CAF0F8;
+    background: #fff;
     padding: 115px 0; }
   
   a {

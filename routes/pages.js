@@ -10,4 +10,8 @@ router.get('/register',(req,res)=>{
     res.render('register');
 });
 
+router.get('/experience',(req,res)=>{
+    res.render('experience');
+});
+
 module.exports = router;
