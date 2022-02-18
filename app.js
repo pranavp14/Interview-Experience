@@ -12,6 +12,14 @@ dotenv.config({ path: './env'});
 const app = express();
 const port = process.env.PORT || 5001;
 
+const template_path = path.join(__dirname,"./templates/views");
+const partials_path = path.join(__dirname,"./templates/partials");
+
+// app.use(express.static(static_path));
+app.set("view engine","hbs");
+app.set("views",template_path);
+hbs.registerPartials(partials_path);
+
 const publicDirectory = path.join(__dirname,'./public');
 const assetsDirectory = path.join(__dirname,'./assets');
 app.use(express.static(publicDirectory));
