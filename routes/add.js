@@ -23,7 +23,7 @@ router.post('/experience',(req,res)=>{
             console.log(err);
         }else{
             console.log(result);
-            alert('success', 'You have successfully add experience!');
+            // alert('success', 'You have successfully add experience!');
             return res.render('index')
         }
 })
