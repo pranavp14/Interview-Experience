@@ -26,7 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="/css/main.css" rel="stylesheet">
-
+  <link href="/css/search.css" rel="stylesheet">
 
 </head>
 
@@ -74,8 +74,6 @@
   </section>
 
   <main id="main">
-
-    <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
@@ -84,59 +82,42 @@
           <h2>Experiences</h2>
           <p>Recent posts</p>
         </div>
-
+        <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+          <form action="/search" method="post">
+           <div class="col-md-6 justify-content-center">
+               <div class="search"> <i class="fa fa-search"></i> <input  type="text" class="form-control" placeholder="Have a question?" name="searchvalue"> 
+               <button type="submit" value="Submit" class="btn btn-primary">Search</button> </div>
+           </div>
+           </form>
+        </div>
+       </div>
+      
+       
         <div class="row">
-
+          {{#each data}}
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <!-- <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div> -->
-              
-              <h3 class="post-title">Amazon Interview Experience for SDE-1 (Off Campus)</h3>
+            <div class="post-box">  
+              <h3 class="post-title">{{CompanyName}} Interview Experience for {{jobRole}} ({{campus}})</h3>
               <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
+                <span class="post-date">{{placeDate}}</span>
+                <span class="post-author"> / {{StudentName}}</span>
               </div>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi cupiditate exercitationem qui magni est...</p>
+              {{#if round1}}
+                   <br></br>
+                   <strong>Round 1({{round1}}):</strong>
+                   <p>{{{trimString experience1 0 200}}}...<a href="/read/{{id}}"><span>Read More</span><i class="bi bi-arrow-right"></i></a></p>
+              {{/if}}
               
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <!-- <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div> -->
-              
-              <h3 class="post-title">VMware Interview Experience for Intern+MTS (On-Campus)</h3>
-              <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi cupiditate exercitationem qui magni est...</p>
-              
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <!-- <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div> -->
-              
-              <h3 class="post-title">Accolite Digital Interview Experience Intern + FTE</h3>
-              <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi cupiditate exercitationem qui magni est...</p>
-              
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
+          {{/each}}
+         </div>
+         
       </div>
 
-    </section><!-- End Recent Blog Posts Section -->
-
-    <!-- ======= Contact Section ======= -->
+    </section>
   
 
   </main><!-- End #main -->

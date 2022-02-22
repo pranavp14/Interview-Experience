@@ -1,11 +1,12 @@
 const express = require("express");
 // require("./db/conn");
-
+const db = require('./db/conn');
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
 const path = require('path');
 const hbs = require('hbs');
 const bodyParser = require("body-parser");
+const { param } = require("./routes/add");
 
 dotenv.config({ path: './env'});
 
@@ -36,15 +37,43 @@ app.set('view engine','hbs');
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 app.use('/add',require('./routes/add'));
-
-
-// app.use('/experience',(req,res)=>{
-//     res.render('experience');
-// })
-// app.use('/',(req,res)=>{
-//     res.render('index');
-// })
-
+app.get('/read/:id',(req,res)=>{
+    console.log(req.params.id)
+    db.query(`SELECT * FROM experience WHERE id=${req.params.id}`,function(err,rows)     {
+    
+        if(err){
+         // req.flash('error', err); 
+         console.log("Error while retreving data "+err)
+         // res.render('list',{page_title:"Users - Node.js",data:''});   
+        }else{
+            
+        //  console.log(rows);
+        //  console.log("Seepterting---------------------------")
+        
+            res.render('read',{data:rows});
+        }
+                            
+         });
+    })
+    app.post('/search',(req,res)=>{
+        console.log("Search value is Here..........")
+        console.log(`${req.body.searchvalue}`)
+        db.query('SELECT * FROM experience WHERE CompanyName=?',[req.body.searchvalue],function(err,rows)     {
+        
+            if(err){
+             // req.flash('error', err); 
+             console.log("Error while retreving data "+err)
+             // res.render('list',{page_title:"Users - Node.js",data:''});   
+            }else{
+                
+            //  console.log(rows);
+             console.log("Seepterting---------------------------")
+            
+                res.render('index',{data:rows});
+            }
+                                
+             });
+        })
 app.listen(port, ()=>{
     console.log("server is running");
 })

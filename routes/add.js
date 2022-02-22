@@ -1,13 +1,11 @@
 const express = require("express");
-// const authcontroller=require('../controllers/auth');
 const router = express.Router();
 const db = require('../db/conn');
 const bcrypt = require("bcryptjs");
-const alert = require('alert')
-// const mysql = require('mysql2');
-// const path = require('path');
+const alert = require('alert');
 
 const bodyParser = require("body-parser");
+const { redirect } = require("express/lib/response");
 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 router.use(bodyParser.json());
@@ -24,9 +22,33 @@ router.post('/experience',(req,res)=>{
         }else{
             console.log(result);
             // alert('success', 'You have successfully add experience!');
-            return res.render('index')
+            res.redirect('/')
         }
 })
 })
+
+router.get('/', function(req, res, next) {
+      console.log("Inside the get request to db");
+        db.query('SELECT * FROM experience',function(err,rows)     {
+    
+           if(err){
+            // req.flash('error', err); 
+            console.log("Error while retreving data "+err)
+            // res.render('list',{page_title:"Users - Node.js",data:''});   
+           }else{
+               
+            // console.log(rows)
+            console.log("Seepterting---------------------------")
+            // for (var j = 0; j < rows.length; j++){
+                
+            //     console.log(rows[j]);
+                
+            //     }
+               res.render('index',{data:rows});
+           }
+                               
+            });
+           
+       });
 
 module.exports = router;
