@@ -85,8 +85,8 @@
         <div class="container">
         <div class="row height d-flex justify-content-center align-items-center">
           <form action="/search" method="post">
-           <div class="col-md-6 justify-content-center">
-               <div class="search"> <i class="fa fa-search"></i> <input  type="text" class="form-control" placeholder="Have a question?" name="searchvalue"> 
+           <div class="col-md-6 ">
+               <div class="search"> <i class="fa fa-search"></i> <input  type="text" class="form-control" placeholder="Enter a company name" name="searchvalue"> 
                <button type="submit" value="Submit" class="btn btn-primary">Search</button> </div>
            </div>
            </form>
@@ -98,7 +98,7 @@
           {{#each data}}
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">  
-              <h3 class="post-title">{{CompanyName}} Interview Experience for {{jobRole}} ({{campus}})</h3>
+              <h3 class="post-title"><a href="/read/{{id}}">{{CompanyName}} Interview Experience for {{jobRole}} ({{campus}})</a></h3>
               <div class="meta">
                 <span class="post-date">{{placeDate}}</span>
                 <span class="post-author"> / {{StudentName}}</span>

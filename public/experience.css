@@ -439,4 +439,6 @@ display-flex, .form-flex, .form-row, .add-info-link {
       width: calc( 100% - 30px);
       max-width: 100%; } }
   
-  
+  #spaceNewline{
+    white-space: pre-wrap;
+  }

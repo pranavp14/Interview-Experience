@@ -38,7 +38,7 @@ app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 app.use('/add',require('./routes/add'));
 app.get('/read/:id',(req,res)=>{
-    console.log(req.params.id)
+    // console.log(req.params.id)
     db.query(`SELECT * FROM experience WHERE id=${req.params.id}`,function(err,rows)     {
     
         if(err){
@@ -46,9 +46,6 @@ app.get('/read/:id',(req,res)=>{
          console.log("Error while retreving data "+err)
          // res.render('list',{page_title:"Users - Node.js",data:''});   
         }else{
-            
-        //  console.log(rows);
-        //  console.log("Seepterting---------------------------")
         
             res.render('read',{data:rows});
         }
@@ -61,19 +58,23 @@ app.get('/read/:id',(req,res)=>{
         db.query('SELECT * FROM experience WHERE CompanyName=?',[req.body.searchvalue],function(err,rows)     {
         
             if(err){
-             // req.flash('error', err); 
+             
              console.log("Error while retreving data "+err)
-             // res.render('list',{page_title:"Users - Node.js",data:''});   
-            }else{
+              
+            }
+            else if(req.body.searchvalue== 0 || rows.length==0){res.redirect('/')}
+            else{
                 
             //  console.log(rows);
-             console.log("Seepterting---------------------------")
+            //  console.log("Seepterting---------------------------")
             
                 res.render('index',{data:rows});
             }
                                 
              });
         })
+
+
 app.listen(port, ()=>{
     console.log("server is running");
 })

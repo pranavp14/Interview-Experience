@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 {{>header}}
+<link rel="stylesheet" href="css/nav.css">
 <body>
     {{>navbar}}
       {{#each data}}
-     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+     <div id="spaceNewline" class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">  
               <h3 class="post-title"><strong></strong>{{CompanyName}} Interview Experience for {{jobRole}} ({{campus}})</strong></h3>
               <div class="meta">
@@ -13,15 +14,13 @@
               </div>
               {{#if round1}}
                    <strong>Round 1({{round1}}):</strong>
-                   <p>{{ experience1}}</p>
+                   <p id="linebreak">{{experience1}}</p>
+                   {{!-- {{#each experience1}} --}}
               {{/if}}
               {{#if round2}}
                    <strong>Round 2({{round2}}):</strong>
-                   <p>{{ experience2}}</p>
-              {{/if}}
-              {{#if round3}}
-                   <strong>Round 3({{round3}}):</strong>
-                   <p>{{ experience3}}</p>
+                   <p id="exprience">{{ experience2}}</p>
+                   
               {{/if}}
               {{#if round3}}
                    <strong>Round 3({{round3}}):</strong>
@@ -49,5 +48,11 @@
           </div>
 
     {{/each}}
+    <script>
+        var connect = document.getElementById('linebreak');
+        
+         var experience = document.getElementById('experience');
+        console.log({{data}});
+      </script>
 </body>
 </html>
