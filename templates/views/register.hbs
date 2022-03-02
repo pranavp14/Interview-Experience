@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> iExperience </title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- <link href="/assets/vendor/aos/aos.css" rel="stylesheet"> -->
+   <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Variables CSS Files. Uncomment your preferred color scheme -->
+  <link href="/css/variables.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+   <link rel="stylesheet" href="/style.css">
+  <link href="/css/main.css" rel="stylesheet">
+
+  </head>
+<body>
+ <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" data-scrollto-offset="0">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+        
+        <h1>i<span>Experience</span></h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+
+          <li><a class="nav-link scrollto" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/register">Add</a></li>
+          <li><a class="nav-link scrollto" href="/">Feedback</a></li>
+          <li><a class="nav-link scrollto" href="/">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle d-none"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <div class="text">
+          {{!-- <span class="text-1"></span> --}}
+          <span class="text-2" id="connect">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+        <div class="text">
+          <span class="text-2" id = "connect1">Let's get start</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form action="/auth/login" method="post">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required name="email">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="************" required name="password">
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+             
+              <div class="text sign-up-text">Don't have an account? <label for="flip" onclick="signup()">Signup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title" >Signup</div>
+        <form action="/auth/register" method="post">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="e.g - Elon Musk" required name="name">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="e.g - abc@gmail.com" required name="email">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-calendar-week"></i>
+                <input type="month" placeholder="Enter your passing year" required name="passingyr">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-code-branch"></i>
+                <input type="text" placeholder="e.g - ELECTRONICS" required name="branch">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="************" required name="password">
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label onclick="login()" for="flip" >Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+   {{#if message}}
+      <h4 class="alert alert-danger mt-4">{{message}}</h4>
+  {{/if}}
+</body>
+<script>
+    function signup(){
+        var connect = document.getElementById('connect');
+        var connect1 = document.getElementById('connect1');
+        connect.style.display = 'none';
+        connect1.style.display = 'block';
+    }
+    function login(){
+        var connect = document.getElementById('connect');
+        var connect1 = document.getElementById('connect1');
+        connect.style.display = 'block';
+        connect1.style.display = 'none';
+    }
+
+</script>
+ <script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
