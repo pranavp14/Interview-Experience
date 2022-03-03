@@ -8,7 +8,7 @@ function render() {
     let myhtml = `  <div class="form-row" >
         <div class="form-group">
             <label>Round ${i+1}</label>
-            <input type="text" class="form-input" name="round${i+2}" />
+            <input type="text" class="form-input" name="round${i+1}" />
         </div>
     </div>
     <div class="form-row">
@@ -18,7 +18,7 @@ function render() {
                 </textarea>
         </div>
     </div>
-    <button onclick="render()" id="demo"style="background-color: #4CAF50; /* Green */
+    <button onclick="render()" id="demo"style="background-color: #00B4D8; 
     border: none;
     color: white;
     margin-left:60%;
@@ -26,7 +26,9 @@ function render() {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;">Add Round</button>
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;">Add Round</button>
 
      `;
 

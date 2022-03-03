@@ -8,10 +8,13 @@
   }
   
   .nav {
-    height: 55px;
-    width: 80%;
+    margin-left: 15px;
+    height: 100px;
+    width: 90%;
+    
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #fff;
+    font-weight: 600;
+    background-color: none;
     position: relative;
   }
   
@@ -96,3 +99,17 @@
       overflow-y: auto; */
     /* } */
   /* } */
+
+  .addButton{
+    background-color: #00B4D8; 
+    border: none;
+    color: white;
+    margin-left:60%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }

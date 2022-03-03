@@ -31,7 +31,7 @@ router.get('/',(req,res)=>{
                 //  }
                
             }
-            console.log(rows);
+            // console.log(rows);
             res.render('index',{data:rows});
         }
                             
