@@ -1,8 +1,17 @@
-
+* {
+    box-sizing: border-box;
+  }
   
   body {
-    margin-left: 5px;
-    /* font-family: 'segoe ui'; */
+      margin: auto;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #222;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    background: #fff;
+    padding: 36px 0;
+    background: radial-gradient(black, transparent);
   }
   
   .nav {
@@ -64,17 +73,15 @@
     }
   }
 
-  .addButton{
-    background-color: #00B4D8;
-    border: none;
-    color: white;
-    margin-left: 0%;
-    padding: 2.5% 4%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 162%;
-    cursor: pointer;
-    border-radius: 4%;
-
+  .container{
+    width: 680px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
+    background: #fff;
   }
+  

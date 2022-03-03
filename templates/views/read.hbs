@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-{{>header}}
-<link rel="stylesheet" href="css/nav.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expeience</title>
+
+    <!-- Main css -->
+    {{!-- <link rel="stylesheet" href="/experience.css"> --}}
+   <link rel="stylesheet" href="css/read.css"> 
+</head>
+{{!-- {{>header}} --}}
 <body>
-    {{>navbar}}
+<div class="main">
+    {{!-- {{>navbar}} --}}
+    {{>nav}}
+    <div class="container">
       {{#each data}}
-     <div id="spaceNewline" class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div id="spaceNewline" class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">  
-              <h3 class="post-title"><strong></strong>{{CompanyName}} Interview Experience for {{jobRole}} ({{campus}})</strong></h3>
+              <h3 class="post-title"><strong></strong>{{{CompanyName}}} Interview Experience for {{jobRole}} ({{campus}})</strong></h3>
               <div class="meta">
-                <span class="post-date">{{placeDate}}</span>
-                <span class="post-author"> / {{StudentName}}</span>
+                <span class="post-date">{{{placeDate}}}</span>
+                <span class="post-author"> / {{{StudentName}}}</span>
               </div>
               {{#if round1}}
-                   <strong>Round 1({{round1}}):</strong>
-                   <p id="linebreak">{{experience1}}</p>
+                   <strong>Round 1({{{round1}}}):</strong>
+                   <p id="linebreak">{{{experience1}}}</p>
                    {{!-- {{#each experience1}} --}}
               {{/if}}
               {{#if round2}}
-                   <strong>Round 2({{round2}}):</strong>
-                   <p id="exprience">{{ experience2}}</p>
+                   <strong>Round 2({{{round2}}}):</strong>
+                   <p id="exprience">{{{ experience2}}}</p>
                    
               {{/if}}
               {{#if round3}}
-                   <strong>Round 3({{round3}}):</strong>
-                   <p>{{ experience3}}</p>
+                   <strong>Round 3({{{round3}}}):</strong>
+                   <p>{{{ experience3}}}</p>
               {{/if}}
               {{#if round4}}
-                   <strong>Round 4({{round4}}):</strong>
-                   <p>{{ experience4}}</p>
+                   <strong>Round 4({{{round4}}}):</strong>
+                   <p>{{{ experience4}}}</p>
               {{/if}}
                {{#if round5}}
-                   <strong>Round 5({{round5}}):</strong>
-                   <p>{{ experience5}}</p>
+                   <strong>Round 5({{{round5}}}):</strong>
+                   <p>{{{ experience5}}}</p>
               {{/if}}
               {{#if message}}
                    <strong>Messages:</strong>
-                   <p>{{message}}</p>
+                   <p>{{{message}}}</p>
               {{/if}}
               {{#if source}}
                    <strong>Resources:</strong>
-                   <p>{{source}}</p>
+                   <p>{{{source}}}</p>
               {{/if}}
               
               {{!-- <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
@@ -48,11 +61,7 @@
           </div>
 
     {{/each}}
-    <script>
-        var connect = document.getElementById('linebreak');
-        
-         var experience = document.getElementById('experience');
-        console.log({{data}});
-      </script>
+    </div>
+</div>
 </body>
 </html>
