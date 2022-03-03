@@ -18,17 +18,18 @@ function render() {
                 </textarea>
         </div>
     </div>
-    <button onclick="render()" id="demo"style="background-color: #00B4D8; 
+    <button onclick="render()" id="demo"style="background-color: #00B4D8;
     border: none;
     color: white;
-    margin-left:60%;
-    padding: 15px 32px;
+    margin-left: 0%;
+    padding: 2.5% 4%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 162%;
     cursor: pointer;
-    border-radius: 5px;">Add Round</button>
+    border-radius: 4%;
+}">Add Round</button>
 
      `;
 

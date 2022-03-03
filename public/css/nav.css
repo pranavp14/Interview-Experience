@@ -8,7 +8,8 @@
   }
   
   .nav {
-    margin-left: 15px;
+    margin-left: 25px;
+    margin-right: 20px;
     height: 100px;
     width: 90%;
     
@@ -100,16 +101,27 @@
     /* } */
   /* } */
 
+  @media (min-width:1000px) {
+    .nav{
+  
+    margin-left: 318px;
+    margin-right: 80px;
+    height: 105px;
+    width: 60%;
+    }
+  }
+
   .addButton{
-    background-color: #00B4D8; 
+    background-color: #00B4D8;
     border: none;
     color: white;
-    margin-left:60%;
-    padding: 15px 32px;
+    margin-left: 0%;
+    padding: 2.5% 4%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 162%;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 4%;
+
   }
