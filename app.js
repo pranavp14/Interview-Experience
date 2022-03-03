@@ -65,7 +65,7 @@ app.get('/read/:id', (req, res) => {
             }
 
             //    }
-            console.log(rows);
+            // console.log(rows);
             res.render('read', { data: rows });
         }
 
