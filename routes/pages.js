@@ -24,21 +24,19 @@ router.get('/',(req,res)=>{
             
              
                  for(var atr in rows[key] ){
-                    //  console.log(typeof atr);
+                   
                     if(typeof rows[key][atr]=='string' || rows[key][atr] instanceof String)
                     rows[key][atr]=rows[key][atr].replace(/(?:\r\n|\r|\n)/g, ' <br />');
-                    // rows[key][atr]=rows[key][atr].replace(/(?:')/g, '`');
-                    // rows[key][atr]=rows[key][atr].replace(/(?:')/g');
-                    // rows[key][atr] = ` ${rows[key][atr]} `;
+                    
                  }
                
             }
-            // console.log(rows);
+           
             res.render('index',{data:rows});
         }
                             
          });
-    // res.render('index');
+   
 });
 
 router.get('/register',(req,res)=>{

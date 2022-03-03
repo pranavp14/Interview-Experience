@@ -52,18 +52,16 @@ app.get('/read/:id', (req, res) => {
         if (err) {
             // req.flash('error', err); 
             console.log("Error while retreving data " + err)
-            // res.render('list',{page_title:"Users - Node.js",data:''});   
+              
         } else {
-            //     for(var key in rows){
+           
 
             var key = 0;
             for (var atr in rows[key]) {
-                //  console.log(typeof atr);
+
                 if (typeof rows[key][atr] == 'string' || rows[key][atr] instanceof String)
                     rows[key][atr] = rows[key][atr].replace(/(?:\r\n|\r|\n)/g, ' <br />');
-                // rows[key][atr]=rows[key][atr].replace(/(?:')/g, '`');
-                // rows[key][atr]=rows[key][atr].replace(/(?:')/g');
-                //    rows[key][atr] = ` ${rows[key][atr]} `;
+         
             }
 
             //    }
