@@ -8,6 +8,7 @@ const alert = require('alert')
     // const path = require('path');
 
 const bodyParser = require("body-parser");
+const async = require("hbs/lib/async");
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.use(bodyParser.json());
@@ -48,18 +49,37 @@ router.post('/register', (req, res) => {
 router.post('/login', function(req, res) {
     var email = req.body.email;
     var password = req.body.password;
-    var sql = 'SELECT * FROM users WHERE email =? AND password =?';
-    db.query(sql, [email, password], function(err, data, fields) {
-        if (err) throw err
-        if (data.length > 0) {
+   
+
+    var sql = 'SELECT * FROM users WHERE email =?';
+    db.query(sql, [email],function(err, data, fields) {
+        
+        if(err){
+            throw err;
+           }
+        else {
+           if (data.length > 0) {
             // req.body.loggedinUser= true;
-            req.body.email = email;
-            console.log("login Successfully!")
-            res.render('experience');
-        } else {
+            // req.body.email = email;
+            const comparison = bcrypt.compare(password, data[0].password)  
+            if(comparison){
+                console.log("login Successfully!")
+                res.render('experience');
+            }
+            else{
+                console.log("Email and password does not match!");
+                res.render('register',{                 
+                    "code":204,                 
+                    "error":"Email and password does not match"            
+                    })
+            }
+        }
+        
+        else {
             alert("Your Email Address or password is wrong")
             res.render('register', { alertMsg: "Your Email Address or password is wrong" });
         }
+      }
     })
 })
 
