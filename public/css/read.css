@@ -11,6 +11,7 @@
     color: #222;
     /* font-weight: 600; */
     font-family: 'Montserrat';
+    font-size: 20.8px;
     background: #fff;
     padding: 15px;
     /* background: radial-gradient(black, transparent); */
@@ -24,7 +25,8 @@
     width: 166%;
     
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
+    font-weight: 900;
+    font-size: large;
     background-color: none;
     position: relative;
   }
