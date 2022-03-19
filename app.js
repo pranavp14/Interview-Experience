@@ -26,9 +26,9 @@ const HTMLContentViewer = require('html-content-viewer');
 HTMLContentViewer.init();
 
 hbs.registerHelper('trimString', function(passedString, startstring, endstring) {
-    var theString = passedString.substring( startstring, endstring );
+    var theString = passedString.substring(startstring, endstring);
     return new hbs.SafeString(theString)
- });
+});
 const publicDirectory = path.join(__dirname, './public');
 const assetsDirectory = path.join(__dirname, './assets');
 app.use(express.static(publicDirectory));
@@ -47,21 +47,21 @@ app.use('/auth', require('./routes/auth'));
 app.use('/add', require('./routes/add'));
 app.get('/read/:id', (req, res) => {
     // console.log(req.params.id)
-    db.query(`SELECT * FROM experience WHERE id=${req.params.id}`, function (err, rows) {
+    db.query(`SELECT * FROM experience WHERE id=${req.params.id}`, function(err, rows) {
 
         if (err) {
             // req.flash('error', err); 
             console.log("Error while retreving data " + err)
-              
+
         } else {
-           
+
 
             var key = 0;
             for (var atr in rows[key]) {
 
                 if (typeof rows[key][atr] == 'string' || rows[key][atr] instanceof String)
                     rows[key][atr] = rows[key][atr].replace(/(?:\r\n|\r|\n)/g, ' <br />');
-         
+
             }
 
             //    }
@@ -74,15 +74,13 @@ app.get('/read/:id', (req, res) => {
 app.post('/search', (req, res) => {
     console.log("Search value is Here..........")
     console.log(`${req.body.searchvalue}`)
-    db.query('SELECT * FROM experience WHERE CompanyName=?', [req.body.searchvalue], function (err, rows) {
+    db.query('SELECT * FROM experience WHERE CompanyName=?', [req.body.searchvalue], function(err, rows) {
 
         if (err) {
 
             console.log("Error while retreving data " + err)
 
-        }
-        else if (req.body.searchvalue == 0 || rows.length == 0) { res.redirect('/') }
-        else {
+        } else if (req.body.searchvalue == 0 || rows.length == 0) { res.redirect('/') } else {
 
             //  console.log(rows);
             //  console.log("Seepterting---------------------------")

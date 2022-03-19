@@ -4,14 +4,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 const { rootCertificates } = require("tls");
 
-dotenv.config({ path: '../env'});
-
-// const db = mysql.createConnection({
-//     host: process.env.DATABASE_HOST,
-//     user: process.env.DATABASE_USER,
-//     password: process.env.DATABASE_PASSWORD,
-//     database: process.env.DATABASE
-// });
+dotenv.config({ path: '../env' });
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -21,18 +14,13 @@ const db = mysql.createConnection({
 });
 
 
-db.connect( (error)=>{
-    if(error){
+db.connect((error) => {
+    if (error) {
         console.log(error)
-    }
-    else{
+    } else {
         console.log('server connected...')
     }
 })
 
 
 module.exports = db;
-
-
-
-
