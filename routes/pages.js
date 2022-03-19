@@ -13,7 +13,7 @@ hbs.registerHelper('trimString', function(passedString, startstring, endstring) 
 router.get('/', (req, res) => {
 
 
-    db.query('SELECT * FROM experience', function(err, rows) {
+    db.query('SELECT * FROM ', function(err, rows) {
 
         if (err) {
             console.log("Error while retreving data " + err)
@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
             }
 
             res.render('index', { data: rows });
+            // res.render('index');
         }
 
     });
