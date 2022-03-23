@@ -16,7 +16,8 @@ router.post('/experience', (req, res) => {
     var conDB = db;
     // console.log(req.body);
 
-    const { StudentName, CompanyName, mode, campus, jobRole, package, placeDate, intershipOffer, email, round1, experience1, round2, experience2, round3, experience3, round4, experience4, round5, experience5, message, source, level } = req.body;
+    var { StudentName, CompanyName, mode, campus, jobRole, package, placeDate, intershipOffer, email, round1, experience1, round2, experience2, round3, experience3, round4, experience4, round5, experience5, message, source, level } = req.body;
+    email = email + CompanyName
     conDB.query('INSERT INTO students SET ?', { name: StudentName, email: email, companyName: CompanyName }, (err, result) => {
         if (err) {
             console.log(err);
