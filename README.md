@@ -1,6 +1,6 @@
 # Interview-Experience
 
-![](public/img/home.png=300x600)
+![](public/img/home.png)
 
 ![](public/img/auth.png)
 
