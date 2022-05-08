@@ -98,15 +98,15 @@
           {{#each data}}
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">  
-              <h3 class="post-title"><a href="/read/{{id}}">{{CompanyName}} Interview Experience for {{jobRole}} ({{campus}})</a></h3>
+              <h3 class="post-title"><a href="/read/{{sid}}">{{companyName}} Interview Experience for {{jobRole}} ({{campus}})</a></h3>
               <div class="meta">
                 <span class="post-date">Place Date : {{placeDate}}</span>
-                <span class="post-author"> / {{StudentName}}</span>
+                <span class="post-author"> / {{name}}</span>
               </div>
-              {{#if round1}}
+              {{#if round}}
                    <br></br>
-                   <strong>Round 1({{round1}}):</strong>
-                   <p>{{{trimString experience1 0 200}}}...<a href="/read/{{id}}"><span>Read More</span><i class="bi bi-arrow-right"></i></a></p>
+                   <strong>Round 1({{round}}):</strong>
+                   <p>{{{trimString experience 0 200}}}...<a href="/read/{{sid}}"><span>Read More</span><i class="bi bi-arrow-right"></i></a></p>
               {{/if}}
               
             </div>
