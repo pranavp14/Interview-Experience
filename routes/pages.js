@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
             console.log("Error while retreving data " + err)
         } else {
             console.log("-------------------------getting   Round   data from query--------------")
-                // console.log(roundData);
+            console.log(roundData);
 
             res.render('index', { data: roundData });
         }

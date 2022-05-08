@@ -45,30 +45,36 @@ app.set('view engine', 'hbs');
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 app.use('/add', require('./routes/add'));
-app.get('/read/:sid', (req, res) => {
-    sid = req.params.sid;
-    // console.log(sid)
-    db.query(`(SELECT * FROM students  WHERE students.sid=${sid} )`, function(err, sData) {
-        if (err) {
-            // req.flash('error', err); 
-            console.log("Error while retreving data " + err)
-        }
+app.get('/read/:email', (req, res) => {
+    let email = req.params.email;
+    console.log(email)
+    var queryy = "SELECT *   FROM   students inner join message ON message.email= '" + email + "' inner join company ON  company.email='" + email + "'"
+    console.log(queryy)
+    db.query((queryy), function(err, sData) {
 
-        email = sData[0].email;
-        console.log(sData[0].email)
-        db.query(`SELECT * FROM company WHERE company.email=${email} `, function(err, mainData) {
+            if (err) {
+                console.log("Error while retreving data " + err)
+            }
+            console.log(sData)
+            console.log("SData is completed-- -- -- -- -- --------- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --")
+            db.query(("select * from round where round.email= '" + email + "'"), function(err, rData) {
+                console.log(email);
 
-            console.log(mainData);
-            res.render('read', { data: mainData });
+                if (err) {
+                    console.log("Error while retreving data " + err)
+                }
+                console.log(rData)
+                res.render('index', { sData: sData, rData: rData });
+            })
+        })
+        /// for round Data
 
-        });
-
-
-    })
 });
 app.post('/search', (req, res) => {
     console.log("Search value is Here..........")
-    console.log(`${req.body.searchvalue}`)
+    console.log(`
+            $ { req.body.searchvalue }
+            `)
     db.query('SELECT * FROM experience WHERE CompanyName=?', [req.body.searchvalue], function(err, rows) {
 
         if (err) {
@@ -80,7 +86,7 @@ app.post('/search', (req, res) => {
             //  console.log(rows);
             //  console.log("Seepterting---------------------------")
 
-            res.render('index', { data: rows });
+            // res.render('index', { data: rows, });
         }
 
     });
