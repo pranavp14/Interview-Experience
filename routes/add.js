@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const alert = require('alert');
 
 const bodyParser = require("body-parser");
-const { redirect } = require("express/lib/response");
+// const { redirect } = require("express/lib/response");
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -16,7 +16,7 @@ router.post('/experience', (req, res) => {
     var conDB = db;
     // console.log(req.body);
 
-    var { StudentName, CompanyName, mode, campus, jobRole, package, placeDate, intershipOffer, email, round1, experience1, round2, experience2, round3, experience3, round4, experience4, round5, experience5, message, source, level } = req.body;
+    var { StudentName, CompanyName, mode, campus, jobRole, package, placeDate, intershipOffer, email, message, source, level } = req.body;
     email = email + CompanyName
     conDB.query('INSERT INTO students SET ?', { name: StudentName, email: email, companyName: CompanyName }, (err, result) => {
         if (err) {
@@ -59,6 +59,7 @@ router.post('/experience', (req, res) => {
                 console.log(result);
                 console.log('success', 'Added data into Round Table');
                 res.end();
+                
             }
         })
 
@@ -72,8 +73,9 @@ router.post('/experience', (req, res) => {
             console.log(err);
         } else {
             console.log(result);
-            console.log('success', 'Added data into MEssageTable');
+            console.log('success', 'Added data into MEssage Table');
             res.end();
+            res.send('register');
         }
     })
 
