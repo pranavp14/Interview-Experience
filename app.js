@@ -45,32 +45,27 @@ app.set('view engine', 'hbs');
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 app.use('/add', require('./routes/add'));
-app.get('/read/:id', (req, res) => {
-    // console.log(req.params.id)
-    db.query(`SELECT * FROM experience WHERE id=${req.params.id}`, function(err, rows) {
-
+app.get('/read/:sid', (req, res) => {
+    sid = req.params.sid;
+    // console.log(sid)
+    db.query(`(SELECT * FROM students  WHERE students.sid=${sid} )`, function(err, sData) {
         if (err) {
             // req.flash('error', err); 
             console.log("Error while retreving data " + err)
-
-        } else {
-
-
-            var key = 0;
-            for (var atr in rows[key]) {
-
-                if (typeof rows[key][atr] == 'string' || rows[key][atr] instanceof String)
-                    rows[key][atr] = rows[key][atr].replace(/(?:\r\n|\r|\n)/g, ' <br />');
-
-            }
-
-            //    }
-            // console.log(rows);
-            res.render('read', { data: rows });
         }
 
-    });
-})
+        email = sData[0].email;
+        console.log(sData[0].email)
+        db.query(`SELECT * FROM company WHERE company.email=${email} `, function(err, mainData) {
+
+            console.log(mainData);
+            res.render('read', { data: mainData });
+
+        });
+
+
+    })
+});
 app.post('/search', (req, res) => {
     console.log("Search value is Here..........")
     console.log(`${req.body.searchvalue}`)

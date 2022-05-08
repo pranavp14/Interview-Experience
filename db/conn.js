@@ -10,7 +10,8 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: '',
-    database: 'nodejs-login'
+    database: 'nodejs-login',
+    multipleStatements: true
 });
 
 
