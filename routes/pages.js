@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
     //     }
 
     // });
-    db.query('  SELECT students.sid,  students.email ,round.round,round.experience, students.companyName, students.name , company.placeDate , company.jobRole,company.campus FROM  students JOIN company ON students.email=company.email JOIN round ON students.email=round.email WHERE (round.round,round.experience , round.id ) IN (select round.round,round.experience, MIN(round.id) FROM round GROUP BY round.email) ', function(err, roundData) {
+    db.query('  SELECT  students.email ,round.round,round.experience, students.companyName, students.name , company.placeDate , company.jobRole,company.campus FROM  students JOIN company ON students.email=company.email JOIN round ON students.email=round.email WHERE (round.round,round.experience , round.id ) IN (select round.round,round.experience, MIN(round.id) FROM round GROUP BY round.email) ', function(err, roundData) {
 
         if (err) {
             console.log("Error while retreving data " + err)
