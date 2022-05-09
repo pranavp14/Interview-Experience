@@ -1459,3 +1459,10 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+/* remove experince button from mobile view */
+
+@media only screen and (max-width: 600px) {
+  .experience-set{
+    display: none;
+  }
+}
