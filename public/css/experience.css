@@ -46,7 +46,7 @@ body {
     font-family: 'Montserrat';
     /* background: #fff; */
     padding: 36px 0;
-    background: radial-gradient(black, transparent);
+    background: #fff;
 }
 
 a {
@@ -67,7 +67,7 @@ a {
 
 .signup-content {
     padding: 10px 0;
-    margin-left: 43px;
+    margin-left: 0px;
     background-color: whitesmoke;
 }
 
@@ -76,7 +76,7 @@ a {
 }
 
 .signup-form {
-    padding: 58px 50px 0px 20px;
+    padding: 20px 40px 0px 20px;
     height: 652px;
     overflow-y: auto;
 }

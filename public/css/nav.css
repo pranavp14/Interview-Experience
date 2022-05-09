@@ -2,6 +2,7 @@
   
   body {
     margin-left: 5px;
+    margin-top: 0px;
     /* font-family: 'segoe ui'; */
   }
   
@@ -57,13 +58,20 @@
   @media (min-width:1000px) {
     .nav{
   
-    margin-left: 318px;
+    margin-left: 280px;
     margin-right: 80px;
     height: 105px;
     width: 60%;
     }
+    .form-margin{
+           margin-left: 16px;
+    }
   }
-
+  @media only screen and (max-width: 600px) {
+    .form-margin{
+      margin-left: 15px;
+}
+  }
   .addButton{
     background-color: #00B4D8;
     border: none;

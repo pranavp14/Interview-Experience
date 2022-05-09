@@ -6,7 +6,7 @@ function render() {
     addRound = document.getElementById("rounds");
     var e = document.createElement('div');
     let myhtml = `  <div class="form-row" >
-        <div class="form-group">
+        <div class="form-margin">
             <label>Round ${i+1}</label>
             <input type="text" class="form-input" name="round${i+1}" />
         </div>

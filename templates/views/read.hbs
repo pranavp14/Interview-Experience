@@ -20,11 +20,14 @@
     <div class="container">
           <div id="spaceNewline" data-aos="fade-up" data-aos-delay="200">
                {{#each sData}}
-                <div class="post-box">  
-              <h3 class="post-title"><strong></strong>{{{CompanyName}}} Interview Experience for {{jobRole}} ({{campus}})</strong></h3>
+              <div class="post-box">  
+               <h3 class="post-title"><strong></strong>{{{CompanyName}}} Interview Experience for {{jobRole}} ({{campus}})</strong></h3>
               <div class="meta">
                 <span class="post-date">{{this.placeDate}}</span>
-                <span class="post-author">  {{{this.name}}}</span>
+                <span class="post-author"> / {{{this.name}}}</span>
+              </div>
+              <div class="meta">
+                <span class="post-date">CTC : {{this.package}} LPA</span>
               </div>
                </div>
                {{/each}}
@@ -38,10 +41,16 @@
 
                {{#each sData}}
                     <div class="post-box">
-                   <strong>Messages:</strong>
-                   <p>{{{message}}}</p>
+                  {{#if message}}
+                     <strong>Messages:</strong>
+                     <p>{{{message}}}</p>
+                   {{/if}}
+                   {{#if source}}{
                    <strong>Resources:</strong>
                    <p>{{{source}}}</p>
+                   }
+                   {{/if}}
+                   <strong>Level : {{{level}}}</strong>
                    </div>
                {{/each}}
               {{!-- <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}

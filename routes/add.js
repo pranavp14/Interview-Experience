@@ -22,25 +22,26 @@ router.post('/experience', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(result);
+            // console.log(result);
             console.log('success', 'Added data into Students Table');
-            res.end();
+            
         }
     })
     conDB.query('INSERT INTO company SET ?', { email: email, internshipOffer: intershipOffer, mode: mode, campus: campus, jobRole: jobRole, package: package, placeDate: placeDate, level: level }, (err, result) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(result);
+            // console.log(result);
             console.log('success', 'Added data into companyTable');
-            res.end();
+            
         }
     })
 
-    // -----------------round table insertion startzzzzz---------------------------
+    // -----------------round table insertion start---------------------------
+
     arr = Object.values(req.body)
     var len = arr.length;
-    console.log(len)
+    // console.log(len)
     for (let i = 0; i < arr.length - 12; i += 2) {
         console.log(arr[i + 9]);
         console.log(arr[i + 10]);
@@ -56,26 +57,23 @@ router.post('/experience', (req, res) => {
             if (err) {
                 console.log(err);
             } else {
-                console.log(result);
+                // console.log(result);
                 console.log('success', 'Added data into Round Table');
-                res.end();
                 
             }
         })
 
     }
 
-    // ---- -------------round table insertion   endszzz---------------------------
-
+    // ---- -------------round table insertion ends---------------------------
 
     conDB.query('INSERT INTO message SET ?', { email: email, message: message, source: source }, (err, result) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(result);
+            // console.log(result);
             console.log('success', 'Added data into MEssage Table');
-            res.end();
-            res.send('register');
+            res.redirect("/");
         }
     })
 
@@ -86,21 +84,11 @@ router.get('/', function(req, res, next) {
     db.query('SELECT * FROM experience', function(err, rows) {
 
         if (err) {
-            // req.flash('error', err); 
-            console.log("Error while retreving data " + err)
-                // res.render('list',{page_title:"Users - Node.js",data:''});   
+            console.log("Error while retreving data " + err)        
         } else {
-
-            // console.log(rows)
-            console.log("Seepterting---------------------------")
-                // for (var j = 0; j < rows.length; j++){
-
-            //     console.log(rows[j]);
-
-            //     }
+            // console.log("Seepterting---------------------------")      
             res.render('index', { data: rows });
         }
-
     });
 
 });
