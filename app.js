@@ -48,7 +48,7 @@ app.use('/add', require('./routes/add'));
 app.get('/read/:email', (req, res) => {
     let email = req.params.email;
     console.log(email)
-    var queryy = "SELECT *   FROM   students inner join message ON message.email= '" + email + "' inner join company ON  company.email='" + email + "'"
+    var queryy = "SELECT *   FROM   students inner join message ON message.email= '" + email + "' inner join company ON  company.email='" + email + "' WHERE  students.email= '" + email + "'"
     console.log(queryy)
     db.query((queryy), function(err, sData) {
 
@@ -64,7 +64,7 @@ app.get('/read/:email', (req, res) => {
                     console.log("Error while retreving data " + err)
                 }
                 console.log(rData)
-                res.render('index', { sData: sData, rData: rData });
+                res.render('read', { sData: sData, rData: rData });
             })
         })
         /// for round Data
