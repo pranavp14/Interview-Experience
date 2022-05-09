@@ -18,50 +18,35 @@
     {{>navbar}}
     {{!-- {{>nav}} --}}
     <div class="container">
-      {{#each sData}}
           <div id="spaceNewline" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">  
+               {{#each sData}}
+                <div class="post-box">  
               <h3 class="post-title"><strong></strong>{{{CompanyName}}} Interview Experience for {{jobRole}} ({{campus}})</strong></h3>
               <div class="meta">
-                <span class="post-date">{{{placeDate}}}</span>
-                <span class="post-author"> / {{{StudentName}}}</span>
+                <span class="post-date">{{this.placeDate}}</span>
+                <span class="post-author">  {{{this.name}}}</span>
               </div>
+               </div>
+               {{/each}}
 
-              
-                   <strong>Round 1({{{round}}}):</strong>
-                   <p id="linebreak">{{{experience1}}}</p>
-                   {{!-- {{#each experience1}} --}}
-              
-              
-                   <strong>Round 2({{{round2}}}):</strong>
-                   <p id="exprience">{{{ experience2}}}</p>
-            
-                   <strong>Round 3({{{round3}}}):</strong>
-                   <p>{{{ experience3}}}</p>
-             
-              {{#if round4}}
-                   <strong>Round 4({{{round4}}}):</strong>
-                   <p>{{{ experience4}}}</p>
-              {{/if}}
-               {{#if round5}}
-                   <strong>Round 5({{{round5}}}):</strong>
-                   <p>{{{ experience5}}}</p>
-              {{/if}}
-              {{#if message}}
+               {{#each rData}}
+                  <div class="post-box">
+                   <strong>Round :  {{round}}</strong>
+                   <p id="linebreak">{{{experience}}}</p>
+                  </div>
+              {{/each}}
+
+               {{#each sData}}
+                    <div class="post-box">
                    <strong>Messages:</strong>
                    <p>{{{message}}}</p>
-              {{/if}}
-              {{#if source}}
                    <strong>Resources:</strong>
                    <p>{{{source}}}</p>
-              {{/if}}
-              
+                   </div>
+               {{/each}}
               {{!-- <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
-            </div>
           </div>
-
-    {{/each}}
-    </div>
+     </div>
 </div>
 </body>
 </html>

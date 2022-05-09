@@ -63,7 +63,9 @@ app.get('/read/:email', (req, res) => {
                 if (err) {
                     console.log("Error while retreving data " + err)
                 }
+
                 console.log(rData)
+                console.log("rData is completed-- -- -- -- -- --------- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --")
                 res.render('read', { sData: sData, rData: rData });
             })
         })
