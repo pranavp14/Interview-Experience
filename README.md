@@ -19,8 +19,12 @@
 - GitHub
 - Screenshots:
 
-![](public/img/home.png)
+![](public/img/S1.png)
 
-![](public/img/auth.png)
+![](public/img/S2.png)
+
+![](public/img/S3.png)
+
+![](public/img/S4.png)
 
 ![](public/img/addExperience.png)
