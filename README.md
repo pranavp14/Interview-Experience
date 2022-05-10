@@ -3,7 +3,12 @@
 - Students can also add their interview experience on this site.
 - This platform help students to get interview experiences of students.
             
-            
+## Normalization in database 
+   Here are the tables, structured as illustrated in database, with some data attributes in them:
+   
+   ![](public/img/iExperience-Table.png)
+   
+   
             
 ## Technologies Used
 1.  NodeJS
