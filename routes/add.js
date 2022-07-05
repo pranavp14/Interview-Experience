@@ -17,65 +17,79 @@ router.post('/experience', (req, res) => {
     // console.log(req.body);
 
     var { StudentName, CompanyName, mode, campus, jobRole, package, placeDate, intershipOffer, email, message, source, level } = req.body;
+    CompanyName.toLowerCase()
     email = email + CompanyName
-    conDB.query('INSERT INTO students SET ?', { name: StudentName, email: email, companyName: CompanyName }, (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {
-            // console.log(result);
-            console.log('success', 'Added data into Students Table');
-            
-        }
-    })
-    conDB.query('INSERT INTO company SET ?', { email: email, internshipOffer: intershipOffer, mode: mode, campus: campus, jobRole: jobRole, package: package, placeDate: placeDate, level: level }, (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {
-            // console.log(result);
-            console.log('success', 'Added data into companyTable');
-            
-        }
-    })
-
-    // -----------------round table insertion start---------------------------
-
-    arr = Object.values(req.body)
-    var len = arr.length;
-    // console.log(len)
-    for (let i = 0; i < arr.length - 12; i += 2) {
-        console.log(arr[i + 9]);
-        console.log(arr[i + 10]);
-    }
-    for (let i = 0; i < arr.length - 12; i++) {
-
-
-        conDB.query('INSERT INTO round SET ?', {
-            email: email,
-            round: arr[i++ + 9],
-            experience: arr[i + 9],
-        }, (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                // console.log(result);
-                console.log('success', 'Added data into Round Table');
-                
+    
+    console.log(email);
+     
+     conDB.query("SELECT email FROM students WHERE email= ?", [email], function (err, row){
+        if (row && row.length) {
+          console.log('email row was found!');
+          alert('User is already filled a data!');
+          res.redirect('/');
+        } 
+        else{
+            conDB.query('INSERT INTO students SET ?', { name: StudentName, email: email, companyName: CompanyName }, (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    // console.log(result);
+                    console.log('success', 'Added data into Students Table');
+                    
+                }
+            })
+            conDB.query('INSERT INTO company SET ?', { email: email, internshipOffer: intershipOffer, mode: mode, campus: campus, jobRole: jobRole, package: package, placeDate: placeDate, level: level }, (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    // console.log(result);
+                    console.log('success', 'Added data into companyTable');
+                    
+                }
+            })
+        
+            // -----------------round table insertion start---------------------------
+        
+            arr = Object.values(req.body)
+            var len = arr.length;
+            // console.log(len)
+            for (let i = 0; i < arr.length - 12; i += 2) {
+                console.log(arr[i + 9]);
+                console.log(arr[i + 10]);
             }
-        })
-
-    }
-
-    // ---- -------------round table insertion ends---------------------------
-
-    conDB.query('INSERT INTO message SET ?', { email: email, message: message, source: source }, (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {
-            // console.log(result);
-            console.log('success', 'Added data into MEssage Table');
-            res.redirect("/");
+            for (let i = 0; i < arr.length - 12; i++) {
+        
+        
+                conDB.query('INSERT INTO round SET ?', {
+                    email: email,
+                    round: arr[i++ + 9],
+                    experience: arr[i + 9],
+                }, (err, result) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        // console.log(result);
+                        console.log('success', 'Added data into Round Table');
+                        
+                    }
+                })
+        
+            }
+        
+            // ---- -------------round table insertion ends---------------------------
+        
+            conDB.query('INSERT INTO message SET ?', { email: email, message: message, source: source }, (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    // console.log(result);
+                    console.log('success', 'Added data into MEssage Table');
+                    res.redirect("/");
+                }
+            })
         }
-    })
+        
+      })
 
 })
 

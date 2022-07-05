@@ -17,9 +17,8 @@ router.get('/', (req, res) => {
         if (err) {
             console.log("Error while retreving data " + err)
         } else {
-            console.log("-------------------------getting   Round   data from query--------------")
-            console.log(roundData);
-
+            // console.log("------getting Rounnd data from query-------")
+            // console.log(roundData);
             res.render('index', { data: roundData });
         }
 
@@ -30,9 +29,5 @@ router.get('/', (req, res) => {
 router.get('/register', (req, res) => {
     res.render('register');
 });
-
-// router.get('/experience', (req, res) => {
-//     res.render('experience');
-// });
 
 module.exports = router;

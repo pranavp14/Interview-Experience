@@ -1,7 +1,7 @@
 const express = require("express");
 // require("./db/conn");
 const db = require('./db/conn');
-const mysql = require('mysql2');
+// const mysql = require('mysql2');
 const dotenv = require('dotenv');
 const path = require('path');
 const hbs = require('hbs');
@@ -47,14 +47,13 @@ app.use('/auth', require('./routes/auth'));
 app.use('/add', require('./routes/add'));
 app.get('/read/:email', (req, res) => {
     let email = req.params.email;
-    console.log(email)
     var queryy = "SELECT * FROM students inner join message ON message.email= '" + email + "' inner join company ON company.email='" + email + "' WHERE students.email= '" + email + "'"   
     db.query((queryy), function(err, sData) {
 
             if (err) {
                 console.log("Error while retreving data " + err)
             }
-            console.log(sData)
+            // console.log(sData)
             console.log("SData is completed-- -- -- -- -- --------- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --")
             db.query(("select * from round where round.email= '" + email + "'"), function(err, rData) {
                 console.log(email);
@@ -62,7 +61,7 @@ app.get('/read/:email', (req, res) => {
                 if (err) {
                     console.log("Error while retreving data " + err)
                 }
-                console.log(rData)
+                // console.log(rData)
                 res.render('read', { sData: sData, rData: rData });
             })
         })
@@ -70,10 +69,10 @@ app.get('/read/:email', (req, res) => {
 
 });
 app.post('/search', (req, res) => {
-    console.log("Search value is Here..........")
-    console.log(`
-            $ { req.body.searchvalue }
-            `)
+    // console.log("Search value is Here..........")
+    // console.log(`
+    //         $ { req.body.searchvalue }
+    //         `)
     db.query('SELECT * FROM experience WHERE CompanyName=?', [req.body.searchvalue], function(err, rows) {
 
         if (err) {
